@@ -1,8 +1,13 @@
 const express = require('express');
 const Joi = require('joi');
 const app = express();
+const logger = require('./logger');
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static('public'));
+
+app.use(logger);
 
 const genres = [
     {id: 1, name: 'Action'},
