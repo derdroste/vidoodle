@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/derdroste/vidoodle/issues"
   },
-  "homepage": "https://github.com/derdroste/vidoodle#readme"
+  "homepage": "https://github.com/derdroste/vidoodle#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.3.0"
+  }
 }
