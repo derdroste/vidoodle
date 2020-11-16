@@ -1,0 +1,6 @@
+{
+  "mail": {
+    "host": "dev-mail-server",
+    "password": "vidoodle_password"
+  }
+}

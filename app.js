@@ -1,7 +1,8 @@
+const config = require('config');
 const express = require('express');
 const Joi = require('joi');
 const app = express();
-const logger = require('./logger')
+const logger = require('./logger');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
@@ -9,6 +10,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use(helmet());
+
+// Configuration
+console.log('Mail Password: ' + JSON.stringify(config.get('mail')));
 
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'));
