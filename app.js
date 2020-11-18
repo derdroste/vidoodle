@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const genres = require('./routes/genres');
 const views = require('./routes/views');
+const customers = require('./routes/customers');
 
 mongoose.connect('mongodb://localhost/vidoodle')
     .then(() => console.log('Connected to MongoDB...'))
@@ -23,6 +24,7 @@ app.use(express.static('public'));
 app.use(helmet());
 app.use('/', views);
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 
 // Configuration
 console.log('Mail Password: ' + JSON.stringify(config.get('mail')));
